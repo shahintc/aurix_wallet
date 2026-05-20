@@ -1,85 +1,190 @@
-Markdown
 # 🪙 Aurix Wallet MVP
 
-A modern, mobile-first Flutter application simulating a gold-backed digital wallet. Users can securely view their balances, buy and sell digital gold (BPC), and seamlessly send value to other users in a clean, fintech-inspired interface.
+### *A Modern Gold-Backed Digital Wallet Experience*
+
+<div align="center">
+
+![Flutter](https://img.shields.io/badge/Flutter-3.12.0+-02569B?style=for-the-badge\&logo=flutter\&logoColor=white)
+![Provider](https://img.shields.io/badge/State_Management-Provider-FFCA28?style=for-the-badge)
+![Architecture](https://img.shields.io/badge/Architecture-Clean_&_Scalable-0A192F?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-MVP_Gold_Simulation-success?style=for-the-badge)
+
+*A modern, mobile-first Flutter application simulating a gold-backed digital wallet. Users can securely view their balances, buy and sell digital gold (BPC), and seamlessly send value to other users in a clean, fintech-inspired interface.*
+
+</div>
 
 ---
 
-## 🚀 How to Run the App
+# 🚀 How to Run the App
 
-1. **Prerequisites:** Ensure you have the [Flutter SDK](https://flutter.dev/docs/get-started/install) (version 3.12.0 or higher) and Android Studio or VS Code installed.
-2. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/shahintc/aurix_wallet.git](https://github.com/shahintc/aurix_wallet.git)
-   cd aurix_wallet
-Install Dependencies:
+## 1️⃣ Prerequisites
 
-Bash
+Ensure you have the following installed:
+
+* [Flutter SDK](https://flutter.dev/docs/get-started/install) *(version 3.12.0 or higher)*
+* Android Studio **or** VS Code
+
+---
+
+## 2️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/shahintc/aurix_wallet.git
+cd aurix_wallet
+```
+
+---
+
+## 3️⃣ Install Dependencies
+
+```bash
 flutter pub get
-Run the Application:
-Select your preferred device (Emulator or Chrome web) and run:
+```
 
-Bash
+---
+
+## 4️⃣ Run the Application
+
+Select your preferred device *(Emulator or Chrome web)* and run:
+
+```bash
 flutter run
-Note: To build a production-ready Android APK, run flutter build apk --release.
+```
 
+> **Note:** To build a production-ready Android APK, run:
+>
+> ```bash
+> flutter build apk --release
+> ```
 
+---
 
-🏗️ Architecture Decisions
+# 🏗️ Architecture Decisions
+
 To meet the 24-hour MVP deadline while maintaining a highly scalable codebase, the following architectural decisions were made:
 
-State Management (Provider): Chosen for its simplicity and efficiency. It allows for a clean separation of business logic (currency conversions, transaction history, and balance updates) from the UI components.
+---
 
-Domain-Driven Folder Structure: The lib directory is strictly organized into screens, providers, widgets, models, and theme. This ensures the project remains maintainable as the application scales.
+## ⚙️ State Management (Provider)
 
-Custom Reusable Widgets: UI elements like AurixCard, PrimaryButton, and AmountField were abstracted into reusable widgets to enforce visual consistency and adhere strictly to the provided Fintech design system (Deep Navy, Gold, and White).
+Chosen for its simplicity and efficiency. It allows for a clean separation of business logic *(currency conversions, transaction history, and balance updates)* from the UI components.
 
-In-Memory Storage: For this simulation, data is handled in-memory via the WalletProvider. This satisfies the core MVP requirements without the overhead of spinning up a live database.
+---
 
+## 📁 Domain-Driven Folder Structure
 
+The `lib` directory is strictly organized into:
 
-✅ What is Completed
+* `screens`
+* `providers`
+* `widgets`
+* `models`
+* `theme`
+
+This ensures the project remains maintainable as the application scales.
+
+---
+
+## 🧩 Custom Reusable Widgets
+
+UI elements like `AurixCard`, `PrimaryButton`, and `AmountField` were abstracted into reusable widgets to enforce visual consistency and adhere strictly to the provided Fintech design system *(Deep Navy, Gold, and White).*
+
+---
+
+## 💾 In-Memory Storage
+
+For this simulation, data is handled in-memory via the `WalletProvider`. This satisfies the core MVP requirements without the overhead of spinning up a live database.
+
+---
+
+# ✅ What is Completed
 
 The following core flows have been successfully implemented and tested:
 
-Authentication UI: Welcome and Login screens designed and fully routed.
+---
 
-Dashboard: Home screen featuring an animated balance card and quick-action navigation.
+### 🔐 Authentication UI
 
-Live Market Simulation: A dynamic timer that actively simulates live gold market price fluctuations every 8 seconds, automatically updating portfolio USD values in real-time.
+Welcome and Login screens designed and fully routed.
 
-Buy & Sell Logic: Full mathematical conversions between USD, Grams of Gold, and BPC (1 BPC = 0.0001g), complete with validation for insufficient balances.
+### 📊 Dashboard
 
-Peer-to-Peer Transfers: A Send screen allowing users to transfer BPC to email addresses or Wallet IDs.
+Home screen featuring an animated balance card and quick-action navigation.
 
-Transaction Tracking: A complete History screen that securely logs all Buys, Sells, and Transfers with accurate timestamps and formatting.
+### 📈 Live Market Simulation
 
+A dynamic timer that actively simulates live gold market price fluctuations every 8 seconds, automatically updating portfolio USD values in real-time.
 
+### 💱 Buy & Sell Logic
 
-🚧 What is Missing
+Full mathematical conversions between USD, Grams of Gold, and BPC *(1 BPC = 0.0001g)*, complete with validation for insufficient balances.
+
+### 🤝 Peer-to-Peer Transfers
+
+A Send screen allowing users to transfer BPC to email addresses or Wallet IDs.
+
+### 🧾 Transaction Tracking
+
+A complete History screen that securely logs all Buys, Sells, and Transfers with accurate timestamps and formatting.
+
+---
+
+# 🚧 What is Missing
 
 As this is a 24-hour conceptual simulation, the following production features were intentionally deferred:
 
-Persistent Backend: A real database to store user credentials, wallet balances, and permanent transaction ledgers.
+---
 
-True Authentication: Integration with Firebase Auth or OAuth for secure user login and session management.
+### 🗄️ Persistent Backend
 
-Live Financial APIs: Connecting to a real-world market API (e.g., Alpha Vantage or Metalprice API) instead of utilizing a local mathematical simulation.
+A real database to store user credentials, wallet balances, and permanent transaction ledgers.
 
-Recipient Validation: The current P2P transfer logic does not cross-reference the recipient email against a live database of registered users.
+### 🔑 True Authentication
 
+Integration with Firebase Auth or OAuth for secure user login and session management.
 
+### 🌐 Live Financial APIs
 
-🚀 What I Would Improve with More Time
+Connecting to a real-world market API *(e.g., Alpha Vantage or Metalprice API)* instead of utilizing a local mathematical simulation.
+
+### 👤 Recipient Validation
+
+The current P2P transfer logic does not cross-reference the recipient email against a live database of registered users.
+
+---
+
+# 🚀 What I Would Improve with More Time
 
 If given additional time to push this MVP to a production-ready state, I would prioritize:
 
-Backend Integration: Connect the app to Firebase or Supabase to handle real-time data syncing, user authentication, and persistent wallet states.
+---
 
-Enhanced Security: Implement biometric authentication (FaceID/Fingerprint) before allowing outgoing transactions.
+### ☁️ Backend Integration
 
-QR Code Functionality: Add the ability for users to generate and scan QR codes for frictionless, in-person BPC transfers.
+Connect the app to Firebase or Supabase to handle real-time data syncing, user authentication, and persistent wallet states.
 
-Automated Testing: Expand the testing suite to include comprehensive widget and unit tests for the core conversion mathematics to ensure absolute financial accuracy.
+### 🛡️ Enhanced Security
 
-CI/CD Pipeline: Set up GitHub Actions to automatically lint, test, and build the APK/iOS outputs upon every commit to the main branch.
+Implement biometric authentication *(FaceID/Fingerprint)* before allowing outgoing transactions.
+
+### 📷 QR Code Functionality
+
+Add the ability for users to generate and scan QR codes for frictionless, in-person BPC transfers.
+
+### 🧪 Automated Testing
+
+Expand the testing suite to include comprehensive widget and unit tests for the core conversion mathematics to ensure absolute financial accuracy.
+
+### ⚡ CI/CD Pipeline
+
+Set up GitHub Actions to automatically lint, test, and build the APK/iOS outputs upon every commit to the `main` branch.
+
+---
+
+<div align="center">
+
+### ✨ Aurix Wallet — Fintech Simulation MVP ✨
+
+*Built with Flutter • Designed for Scalability • Inspired by Modern Digital Banking*
+
+</div>
